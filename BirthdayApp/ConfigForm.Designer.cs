@@ -37,9 +37,11 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addANewBirthdayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editTheSelectedItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeTheSelectedItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutBirthdayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +66,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.actionsToolStripMenuItem});
+            this.actionsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(282, 24);
@@ -84,21 +87,21 @@
             // reloadFileToolStripMenuItem
             // 
             this.reloadFileToolStripMenuItem.Name = "reloadFileToolStripMenuItem";
-            this.reloadFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadFileToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.reloadFileToolStripMenuItem.Text = "Reload File";
             this.reloadFileToolStripMenuItem.Click += new System.EventHandler(this.reloadFileToolStripMenuItem_Click);
             // 
             // saveChangesToolStripMenuItem
             // 
             this.saveChangesToolStripMenuItem.Name = "saveChangesToolStripMenuItem";
-            this.saveChangesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveChangesToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.saveChangesToolStripMenuItem.Text = "Save Changes";
             this.saveChangesToolStripMenuItem.Click += new System.EventHandler(this.saveChangesToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -106,7 +109,6 @@
             // 
             this.actionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addANewBirthdayToolStripMenuItem,
-            this.editTheSelectedItemToolStripMenuItem,
             this.removeTheSelectedItemToolStripMenuItem});
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
             this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
@@ -119,17 +121,12 @@
             this.addANewBirthdayToolStripMenuItem.Text = "Add a new birthday";
             this.addANewBirthdayToolStripMenuItem.Click += new System.EventHandler(this.addANewBirthdayToolStripMenuItem_Click);
             // 
-            // editTheSelectedItemToolStripMenuItem
-            // 
-            this.editTheSelectedItemToolStripMenuItem.Name = "editTheSelectedItemToolStripMenuItem";
-            this.editTheSelectedItemToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.editTheSelectedItemToolStripMenuItem.Text = "Edit the selected item";
-            // 
             // removeTheSelectedItemToolStripMenuItem
             // 
             this.removeTheSelectedItemToolStripMenuItem.Name = "removeTheSelectedItemToolStripMenuItem";
             this.removeTheSelectedItemToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.removeTheSelectedItemToolStripMenuItem.Text = "Remove the selected item";
+            this.removeTheSelectedItemToolStripMenuItem.Click += new System.EventHandler(this.removeTheSelectedItemToolStripMenuItem_Click);
             // 
             // listBox1
             // 
@@ -139,6 +136,29 @@
             this.listBox1.Size = new System.Drawing.Size(257, 355);
             this.listBox1.TabIndex = 2;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutBirthdayToolStripMenuItem,
+            this.websiteToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // aboutBirthdayToolStripMenuItem
+            // 
+            this.aboutBirthdayToolStripMenuItem.Name = "aboutBirthdayToolStripMenuItem";
+            this.aboutBirthdayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutBirthdayToolStripMenuItem.Text = "About Birthday";
+            this.aboutBirthdayToolStripMenuItem.Click += new System.EventHandler(this.aboutBirthdayToolStripMenuItem_Click);
+            // 
+            // websiteToolStripMenuItem
+            // 
+            this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
+            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.websiteToolStripMenuItem.Text = "Website";
+            this.websiteToolStripMenuItem.Click += new System.EventHandler(this.websiteToolStripMenuItem_Click);
             // 
             // ConfigForm
             // 
@@ -175,8 +195,10 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addANewBirthdayToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editTheSelectedItemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeTheSelectedItemToolStripMenuItem;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutBirthdayToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem websiteToolStripMenuItem;
     }
 }

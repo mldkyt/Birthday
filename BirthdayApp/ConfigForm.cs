@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -22,13 +23,13 @@ namespace BirthdayApp
             LoadData(true);
 
             removeTheSelectedItemToolStripMenuItem.Enabled = false;
-            editTheSelectedItemToolStripMenuItem.Enabled = false;
         }
 
         private void LoadData(bool reloadFromDisk)
         {
             if (reloadFromDisk)
             {
+                data.Clear();
                 using (var stream = File.OpenRead(Program.SavedFilePath))
                 {
                     var serializer = new XmlSerializer(typeof(List<DataType>));
@@ -49,7 +50,6 @@ namespace BirthdayApp
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             removeTheSelectedItemToolStripMenuItem.Enabled = listBox1.SelectedIndex != -1 && listBox1.SelectedIndex < listBox1.Items.Count;
-            editTheSelectedItemToolStripMenuItem.Enabled = removeTheSelectedItemToolStripMenuItem.Enabled;
         }
 
         private void saveChangesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,6 +87,29 @@ namespace BirthdayApp
             };
             Enabled = false;
             form.Show();
+        }
+
+        private void removeTheSelectedItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1 && listBox1.SelectedIndex >= listBox1.Items.Count)
+            {
+                MessageBox.Show("Select an element", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            data.RemoveAt(listBox1.SelectedIndex);
+            LoadData(false);
+        }
+
+        private void aboutBirthdayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new About();
+            form.Show();
+        }
+
+        private void websiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://mldkyt.com");
         }
     }
 }
